@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Blog</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">My Blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <h1 class="fw-bold">Welcome to My Blog</h1>
+      <p class="lead">Sharing knowledge, tutorials, and stories with the world</p>
+    </div>
+  </header>
+
+  <!-- Blog Content -->
+  <main class="container my-5">
+    <div class="row">
+      <!-- Blog Posts -->
+      <div class="col-lg-8">
+        <!-- Post 1 -->
+        <div class="card mb-4">
+          <img src="https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2019/09/INDIA-TRAVEL-GUIDE-1.jpg?ssl=1" class="card-img-top" alt="Blog Post 1">
+          <div class="card-body">
+            <h2 class="card-title">First Blog Post</h2>
+            <p class="card-text">This is an example of a blog post summary. It should be engaging enough to make the reader want to continue reading.</p>
+            <a href="#" class="btn btn-primary">Read More →</a>
+          </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="card mb-4">
+          <img src="https://www.intrepidtravel.com/adventures/wp-content/uploads/2018/12/IMG_20180716_173510-e1545876235821.jpg" class="card-img-top" alt="Blog Post 2">
+          <div class="card-body">
+            <h2 class="card-title">Second Blog Post</h2>
+            <p class="card-text">Another blog summary that gives a short introduction to the topic discussed in the full article.</p>
+            <a href="#" class="btn btn-primary">Read More →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <!-- Search -->
+        <div class="card mb-4">
+          <div class="card-header">Search</div>
+          <div class="card-body">
+            <input type="text" class="form-control" placeholder="Search...">
+          </div>
+        </div>
+        <!-- Categories -->
+        <div class="card mb-4">
+          <div class="card-header">Categories</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Technology</li>
+            <li class="list-group-item">Programming</li>
+            <li class="list-group-item">Lifestyle</li>
+            <li class="list-group-item">Travel</li>
+          </ul>
+        </div>
+        <!-- About -->
+        <div class="card mb-4">
+          <div class="card-header">About Me</div>
+          <div class="card-body">
+            <p>Hello! I'm a passionate blogger sharing tutorials and personal experiences. Stay connected for more!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">© 2025 My Blog. Built with Bootstrap.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

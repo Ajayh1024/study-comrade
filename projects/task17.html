@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Cards Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .card-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      width: 200px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+      background: #f9f9f9;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Display 3 Cards using JS</h2>
+  <div class="card-container" id="card-container"></div>
+
+  <script>
+    // Example of HOISTING
+    hoistedFunction(); // works because function declarations are hoisted
+    function hoistedFunction() {
+      console.log("This function is hoisted!");
+    }
+
+    console.log(x); // undefined (var is hoisted but not initialized)
+    var x = 20;
+
+    // BOM Example
+    console.log("Window width: " + window.innerWidth);
+
+    // DOM Example: Creating 3 cards dynamically
+    const cards = [
+      { title: "Card 1", desc: "This is the first card", img: "https://dz3we2x72f7ol.cloudfront.net/expansions/surging-sparks/en-us/SV08_EN_247-2x.png" },
+      { title: "Card 2", desc: "This is the second card", img: "https://dz3we2x72f7ol.cloudfront.net/expansions/151/en-us/SV3pt5_EN_6-2x.png" },
+      { title: "Card 3", desc: "This is the third card", img: "https://dz3we2x72f7ol.cloudfront.net/expansions/151/en-us/SV3pt5_EN_151-2x.png" }
+    ];
+
+    const container = document.getElementById("card-container");
+
+    cards.forEach(card => {
+      let div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <img src="${card.img}" alt="${card.title}">
+        <h3>${card.title}</h3>
+        <p>${card.desc}</p>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>

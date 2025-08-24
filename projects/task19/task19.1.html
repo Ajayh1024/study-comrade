@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Cards</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    #movie-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .card {
+      width: 200px; padding: 10px; border: 1px solid #ccc;
+      border-radius: 10px; background: #fff; text-align: center;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .card img { width: 100%; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h2>🎬 Movie Search</h2>
+  <input type="text" id="searchInput" placeholder="Enter movie name">
+  <button onclick="getMovies()">Search</button>
+
+  <div id="movie-container"></div>
+
+  <script>
+    async function getMovies() {
+      let query = document.getElementById("searchInput").value;
+      if (!query) query = "batman"; // default
+
+      const apiKey = "thewdb"; // OMDb free demo key
+      const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
+
+      try {
+        let response = await fetch(url);
+        let data = await response.json();
+
+        const container = document.getElementById("movie-container");
+        container.innerHTML = ""; // clear old data
+
+        if (data.Search) {
+          data.Search.forEach(movie => {
+            let div = document.createElement("div");
+            div.className = "card";
+            div.innerHTML = `
+              <img src="${movie.Poster}" alt="${movie.Title}">
+              <h3>${movie.Title}</h3>
+              <p>${movie.Year}</p>
+            `;
+            container.appendChild(div);
+          });
+        } else {
+          container.innerHTML = "<p>No movies found ❌</p>";
+        }
+      } catch (error) {
+        console.log("Error fetching movies:", error);
+      }
+    }
+  </script>
+</body>
+</html>
